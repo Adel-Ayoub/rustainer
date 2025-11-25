@@ -1,0 +1,22 @@
+[package]
+name = "rustainer"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0"
+clap = { version = "4.4", features = ["derive"] }
+flate2 = "1.0"
+nix = { version = "0.27", features = ["mount", "sched", "hostname", "fs", "feature"] }
+oci-spec = "0.6"
+rand = "0.8"
+reqwest = { version = "0.11", features = ["json"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tar = "0.4"
+tempfile = "3.10"
+thiserror = "1.0"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["fmt"] }
+uuid = { version = "1.7", features = ["serde", "v4"] }
+
