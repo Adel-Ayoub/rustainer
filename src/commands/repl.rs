@@ -2,7 +2,7 @@ use anyhow::Result;
 use std::io::{self, Write};
 
 pub fn repl() -> Result<()> {
-    println!("Rustainer REPL v0.1.0");
+    println!("Rustainer REPL");
     println!("Type 'help' for commands, 'exit' to quit\n");
 
     loop {
@@ -24,10 +24,9 @@ pub fn repl() -> Result<()> {
         match cmd {
             "help" | "?" => print_help(),
             "exit" | "quit" | "q" => {
-                println!("Goodbye!");
                 break;
             }
-            "version" | "v" => println!("rustainer v0.1.0"),
+            "version" | "v" => println!("rustainer"),
             "list" | "ls" => list_containers(),
             "images" => list_images(),
             "ps" => list_running(),
