@@ -7,6 +7,7 @@ mod utils;
 
 use anyhow::Result;
 use clap::Parser;
+use commands::repl;
 #[cfg(unix)]
 use commands::{run, start, RunOpts};
 use tracing::debug;
@@ -27,29 +28,36 @@ enum SubCommand {
     #[cfg(unix)]
     #[command(hide = true)]
     Start(RunOpts),
+
+    /// Start interactive REPL mode
+    Repl,
 }
 
 fn main() -> Result<()> {
-    tracing_subscriber::fmt()
-        .pretty()
-        .with_max_level(tracing::Level::TRACE)
-        .init();
-
     let opts: Opts = Opts::parse();
 
     match opts.subcmd {
         #[cfg(unix)]
         SubCommand::Run(opts) => {
+            tracing_subscriber::fmt()
+                .pretty()
+                .with_max_level(tracing::Level::TRACE)
+                .init();
             run(opts)?;
+            debug!("container exited");
         }
         #[cfg(unix)]
         SubCommand::Start(opts) => {
+            tracing_subscriber::fmt()
+                .pretty()
+                .with_max_level(tracing::Level::TRACE)
+                .init();
             start(opts)?;
+        }
+        SubCommand::Repl => {
+            repl()?;
         }
     }
 
-    debug!("container exited");
-
     Ok(())
 }
-
