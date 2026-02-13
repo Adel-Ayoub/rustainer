@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200" style="background:#1a1b26">
+  <defs>
+    <marker id="arrowhead3" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#7aa2f7"/>
+    </marker>
+    <style>
+      .state { fill: #292e42; stroke: #3d59a1; stroke-width: 2; rx: 8; }
+      .terminal { fill: #1a1b26; stroke: #7aa2f7; stroke-width: 3; }
+      .text { fill: #a9b1d6; font-family: Inter, system-ui, sans-serif; font-size: 12px; text-anchor: middle; }
+      .label { fill: #565f89; font-family: Inter, system-ui, sans-serif; font-size: 10px; text-anchor: middle; }
+      .edge { stroke: #3d59a1; stroke-width: 2; fill: none; marker-end: url(#arrowhead3); }
+    </style>
+  </defs>
+  
+  <!-- Start State -->
+  <circle class="terminal" cx="40" cy="100" r="15"/>
+  <circle cx="40" cy="100" r="8" fill="#7aa2f7"/>
+  
+  <!-- Created State -->
+  <rect class="state" x="90" y="75" width="90" height="50"/>
+  <text class="text" x="135" y="105">Created</text>
+  
+  <!-- Running State -->
+  <rect class="state" x="220" y="75" width="90" height="50"/>
+  <text class="text" x="265" y="105">Running</text>
+  
+  <!-- Stopped State -->
+  <rect class="state" x="350" y="75" width="90" height="50"/>
+  <text class="text" x="395" y="105">Stopped</text>
+  
+  <!-- End State -->
+  <circle class="terminal" cx="475" cy="100" r="15"/>
+  <circle cx="475" cy="100" r="8" fill="#7aa2f7"/>
+  
+  <!-- Edges -->
+  <line class="edge" x1="55" y1="100" x2="90" y2="100"/>
+  
+  <line class="edge" x1="180" y1="100" x2="220" y2="100"/>
+  <text class="label" x="200" y="90">start</text>
+  
+  <path class="edge" d="M310,90 Q330,70 350,90"/>
+  <text class="label" x="330" y="65">exit</text>
+  
+  <path class="edge" d="M310,110 Q330,130 350,110"/>
+  <text class="label" x="330" y="150">signal</text>
+  
+  <line class="edge" x1="440" y1="100" x2="460" y2="100"/>
+  <text class="label" x="450" y="90">cleanup</text>
+</svg>

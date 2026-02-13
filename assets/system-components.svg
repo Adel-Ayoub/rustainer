@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 300" style="background:#1a1b26">
+  <defs>
+    <marker id="arrowhead2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#7aa2f7"/>
+    </marker>
+    <style>
+      .subgraph { fill: #24283b; stroke: #3d59a1; stroke-width: 1; rx: 8; }
+      .node { fill: #292e42; stroke: #7aa2f7; stroke-width: 2; rx: 6; }
+      .text { fill: #a9b1d6; font-family: Inter, system-ui, sans-serif; font-size: 11px; text-anchor: middle; }
+      .title { fill: #7aa2f7; font-family: Inter, system-ui, sans-serif; font-size: 13px; font-weight: 600; text-anchor: middle; }
+      .edge { stroke: #3d59a1; stroke-width: 2; fill: none; marker-end: url(#arrowhead2); }
+    </style>
+  </defs>
+  
+  <!-- CLI Layer Subgraph -->
+  <rect class="subgraph" x="20" y="20" width="140" height="180"/>
+  <text class="title" x="90" y="45">CLI Layer</text>
+  <rect class="node" x="40" y="65" width="100" height="35"/>
+  <text class="text" x="90" y="87">main.rs</text>
+  <rect class="node" x="40" y="115" width="100" height="35"/>
+  <text class="text" x="90" y="137">repl.rs</text>
+  
+  <!-- Core Runtime Subgraph -->
+  <rect class="subgraph" x="220" y="20" width="160" height="180"/>
+  <text class="title" x="300" y="45">Core Runtime</text>
+  <rect class="node" x="240" y="65" width="120" height="30"/>
+  <text class="text" x="300" y="85">run.rs</text>
+  <rect class="node" x="240" y="105" width="120" height="30"/>
+  <text class="text" x="300" y="125">namespace.rs</text>
+  <rect class="node" x="240" y="145" width="120" height="30"/>
+  <text class="text" x="300" y="165">cgroup.rs</text>
+  
+  <!-- Image Storage Subgraph -->
+  <rect class="subgraph" x="440" y="20" width="160" height="180"/>
+  <text class="title" x="520" y="45">Image Storage</text>
+  <rect class="node" x="460" y="65" width="120" height="30"/>
+  <text class="text" x="520" y="85">storage.rs</text>
+  <rect class="node" x="460" y="105" width="120" height="30"/>
+  <text class="text" x="520" y="125">docker.rs</text>
+  <rect class="node" x="460" y="145" width="120" height="30"/>
+  <text class="text" x="520" y="165">pull.rs</text>
+  
+  <!-- Edges -->
+  <line class="edge" x1="140" y1="82" x2="240" y2="80"/>
+  <line class="edge" x1="140" y1="132" x2="240" y2="120"/>
+  <line class="edge" x1="360" y1="80" x2="460" y2="80"/>
+  <line class="edge" x1="580" y1="160" x2="580" y2="200"/>
+  <path class="edge" d="M580,200 Q580,230 520,230 Q460,230 460,125" style="marker-end:url(#arrowhead2)"/>
+</svg>
